@@ -182,8 +182,27 @@
         </div>
       </div>
     </div>
+    <audio
+      id="music"
+      src="happy-birthday-357371.mp3"
+      autoplay
+      loop
+      muted
+    ></audio>
   </body>
   <script>
+    document.addEventListener("click", () => {
+      const music = document.querySelector("#music");
+      if (music.muted) {
+        music.muted = false; // bật tiếng sau lần click đầu tiên
+        music.play();
+      }
+    });
+    document.querySelector("#btn__letter").addEventListener("click", () => {
+      const music = document.querySelector("#music");
+      music.play();
+    });
+
     let datetxt = "22/08/2003";
     let datatxtletter =
       "Chúc mừng sinh nhật! Chúc bạn một ngày tràn ngập niềm vui, tiếng cười và những kỷ niệm tuyệt vời. 💕";
